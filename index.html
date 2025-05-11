@@ -56,16 +56,17 @@
         <figcaption>The Venezuelan National Bird</figcaption>
       </figure>
     </section>
-    <section class="card">
+    <section class="card courses">
       <h2>Web and Computer Programming Certificates</h2>
       <div class="filter">
-        <button id="AllButton" aria-label="Show All Courses">All Courses</button>
-        <button id="CseButton" aria-label="Show CSE Courses">CSE Courses</button>
-        <button id="WddButton" aria-label="Show WDD Courses">WDD Courses</button>
+        <button id="AllButton" data-subject="filter" aria-label="Show All Courses">All Courses</button>
+        <button id="CseButton" data-subject="filter" aria-label="Show CSE Courses">CSE Courses</button>
+        <button id="WddButton" data-subject="filter" aria-label="Show WDD Courses">WDD Courses</button>
       </div>
       <hr>
       <ul class="course-list" aria-busy="true">
       </ul>
+      <p id="total-credits">Total Credits: 0</p>
     </section>
   </main>
   <footer>

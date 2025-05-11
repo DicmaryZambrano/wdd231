@@ -78,29 +78,32 @@ const courses = [
   }
 ]
 
-
-
-document.querySelector(".course-list").innerHTML = courses.map(course => `
+function displayCourses(filter) {
+  const filteredCourses = filter ? courses.filter(course => course.subject === filter) : courses;
+  document.querySelector(".course-list").innerHTML = filteredCourses.map(course => `
     <li class="course-item ${course.completed ? "completed" : ""}">${course.subject} ${course.number}</li>
-`).join('');
+  `).join('');
+}
 
-document.querySelector("#AllButton").addEventListener("click", function () {
-  document.querySelector(".course-list").innerHTML = ""
+function updateTotalCredits() {
+  const visibleCourses = Array.from(document.querySelectorAll('.course-item'));
+  const totalCredits = visibleCourses.reduce((sum, item) => {
+    const course = courses.find(course => `${course.subject} ${course.number}` === item.textContent);
+    return sum + (course ? course.credits : 0);
+  }, 0);
+  
+  document.querySelector("#total-credits").textContent = `Total Credits: ${totalCredits}`;
+}
 
-  document.querySelector(".course-list").innerHTML = courses.map(course => `
-    <li class="course-item ${course.completed ? "completed" : ""}">${course.subject} ${course.number}</li>`).join('');
-})
+// Event listeners for buttons
+document.querySelector("#AllButton").addEventListener("click", () => displayCourses());
+document.querySelector("#CseButton").addEventListener("click", () => displayCourses("CSE"));
+document.querySelector("#WddButton").addEventListener("click", () => displayCourses("WDD"));
 
-document.querySelector("#CseButton").addEventListener("click", function () {
-  document.querySelector(".course-list").innerHTML = ""
+document.querySelectorAll("button[data-subject='filter']").forEach(button => {
+  button.addEventListener("click", () => setTimeout(updateTotalCredits, 100));
+});
 
-  document.querySelector(".course-list").innerHTML = courses.filter(course => course.subject === "CSE").map(course => `
-    <li class="course-item ${course.completed ? "completed" : ""}">${course.subject} ${course.number}</li>`).join('');
-})
-
-document.querySelector("#WddButton").addEventListener("click", function () {
-  document.querySelector(".course-list").innerHTML = ""
-
-  document.querySelector(".course-list").innerHTML = courses.filter(course => course.subject === "WDD").map(course => `
-    <li class="course-item ${course.completed ? "completed" : ""}">${course.subject} ${course.number}</li>`).join('');
-})
+// Display all courses on page load
+displayCourses();
+updateTotalCredits();
