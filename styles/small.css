@@ -5,7 +5,7 @@
   --h3-color: #1C1A19;
 
   --primary-color: #E2E2E0;
-  --seconday-color: #F8F6F5;
+  --secondary-color: #F8F6F5;
   --accent-color1: #2c4e50;
   --accent-color2: #633c27;
 
@@ -44,7 +44,7 @@ header {
   align-items: center;
   gap: 1rem;
   padding: 1rem;
-  background: var(--seconday-color);
+  background: var(--secondary-color);
 }
 
 .header-title {
@@ -54,7 +54,6 @@ header {
   width: 100%;
   justify-content: space-between;
   font-family: "Archivo Black", sans-serif;
-  font-weight: 400px;
   min-height: 80px;
 }
 
@@ -117,14 +116,14 @@ main {
 }
 
 .card h2 {
-  color: var(--seconday-color);
+  color: var(--secondary-color);
   background-color: #335F61;
   padding: 1rem;
   margin-top: 0;
 }
 
 .card {
-  background-color: var(--seconday-color);
+  background-color: var(--secondary-color);
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   overflow: hidden;
@@ -227,5 +226,5 @@ footer {
   align-items: center;
   gap: 1rem;
   padding: 1rem;
-  background-color: var(--seconday-color);
+  background-color: var(--secondary-color);
 }
