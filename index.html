@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WDD231 - Dicmary Zambrano</title>
+      <meta name="author" content="Dicmary Zambrano">
+    <meta name="description" content="WDD 231 Personal Page - Dicmary Zambrano">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Barlow:wght@400;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/larger.css">
+    <link rel="stylesheet" href="styles/small.css">
+  <script src="scripts/dates.js" defer></script>
+  <script src="scripts/hamburger.js" defer></script>
+  <script src="scripts/courses.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <div class="header-title">
+      <div class="profile-box">
+        <img class="profile-picture" height="4" width="5" src="images/dicmary-picture.webp" alt="Portrait of Dicmary Zambrano">
+        <span class="header-name">Dicmary Zambrano</span>
+      </div>
+      <button id="HamMenu" class="menu-toggle" aria-label="Open Menu">
+      </button>
+    </div>
+    <nav>
+      <a href="#" title="Home" class="current">Home</a>
+      <a href="#" title="Chamber">Chamber</a>
+      <a href="#" title="Final">Final</a>
+      <a target="_blank" rel="noopener noreferrer" href="https://github.com/DicmaryZambrano" title="Github Profile">Github Profile</a>
+      <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/djoselin/" title="LinkedIn">LinkedIn</a>
+    </nav>
+  </header>
+  <main>
+    <h1>Home</h1>
+    <section class="card">
+      <h2>Course Work</h2>
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </section>
+    <section class="card">
+      <h2>Trujillo, Venezuela</h2>
+      <figure>
+        <img src="images/turpial.webp" height="1" width="1" alt="Image of a Turpial, the Venezuelan National Bird">
+        <figcaption>The Venezuelan National Bird</figcaption>
+      </figure>
+    </section>
+    <section class="card">
+      <h2>Web and Computer Programming Certificates</h2>
+      <div class="filter">
+        <button id="AllButton" aria-label="Show All Courses">All Courses</button>
+        <button id="CseButton" aria-label="Show CSE Courses">CSE Courses</button>
+        <button id="WddButton" aria-label="Show WDD Courses">WDD Courses</button>
+      </div>
+      <hr>
+      <ul class="course-list" aria-busy="true">	
+      </ul>
+    </section>
+  </main>
+  <footer>
+      <p><span id="date"></span> 🖤 Dicmary Zambrano - Venezuela 🖤 WDD 231 Personal Page
+      </p>
+      <p id="lastModified" aria-live="polite"></p>
+  </footer>
+</body>
+
+</html>
