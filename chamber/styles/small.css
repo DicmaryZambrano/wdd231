@@ -65,7 +65,7 @@ img {
 
 
 img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
 }
 
@@ -292,8 +292,7 @@ header {
 
 #Cards.grid .member-card img {
   margin: 0 auto;
-  max-height: 150px;
-  object-fit: contain;
+  max-width: 300px;
 }
 
 #Cards.grid .member-card h3 {
@@ -328,7 +327,7 @@ header {
 }
 
 .membership-bronze {
-  background-color: #9b5e21;
+  background-color: #794716;
   border: 2px solid #613918;
   color: var(--t-on-color)
 }

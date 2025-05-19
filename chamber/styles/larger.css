@@ -28,7 +28,18 @@
 
   .nav-item a:hover {
     background-color: var(--accent-color3);
-    color: var(--t-on-color);
+  }
+
+  .page-toggle,
+  #gridToggle,
+  #listToggle {
+    transition: all 0.2s ease-in-out;
+  }
+
+  .page-toggle:hover,
+  #gridToggle:hover,
+  #listToggle:hover {
+    scale: 1.02;
   }
 
   .menu-toggle {
@@ -57,11 +68,11 @@
     text-align: left;
   }
 
- #Cards.grid .member-card{
-  transition: all 0.3s ease-in-out;
- }
+  #Cards.grid .member-card {
+    transition: all 0.3s ease-in-out;
+  }
 
-  #Cards.grid .member-card:hover{
+  #Cards.grid .member-card:hover {
     scale: 1.02;
   }
 

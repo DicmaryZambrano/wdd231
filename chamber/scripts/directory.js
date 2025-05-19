@@ -33,10 +33,11 @@ function generateMemberCard(data) {
   memberCard.appendChild(memberName);
 
   const memberImage = document.createElement("img");
+  memberImage.loading = "lazy";
   memberImage.src = data.logo;
   memberImage.alt = `${data.name}'s logo`;
   memberImage.width = 600;
-  memberImage.width = 600;
+  memberImage.height = 600;
   memberCard.appendChild(memberImage);
 
   const memberAddress = document.createElement("p");
