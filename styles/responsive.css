@@ -1,0 +1,17 @@
+nav {
+  background-color: bisque;
+}
+
+#myButton::before {
+  content: "☰";
+}
+
+#myButton {
+  color: rgb(221, 221, 221);
+  background-color: rgb(61, 61, 61);
+  border: none;
+  font-size: 2rem;
+  padding: .5rem 2vw;
+  cursor: pointer;
+  text-align: left;
+}

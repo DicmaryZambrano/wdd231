@@ -1,0 +1,25 @@
+{
+    "family": {
+        "name": "Smith",
+        "ward-join": "05-12-2023",
+        "number-of-records": 3,
+        "visited": true,
+        "members": {
+            "father": {
+                "name": "John",
+                "gender": "m",
+                "birthdate": "12-30-1980"
+            },
+            "mother": {
+                "name": "Jane",
+                "gender": "f",
+                "birthdate": "01-12-1983"
+            },
+            "child": {
+                "name": "Emily",
+                "gender": "f",
+                "birthdate": "08-27-2002"
+            }
+        }
+    }
+}

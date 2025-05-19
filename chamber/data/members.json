@@ -1,0 +1,103 @@
+{
+  "members": [
+    {
+      "name": "Café Montaña Azul",
+      "address": "Av. Bolívar, Trujillo, Venezuela",
+      "phone": "(0271) 111-1111",
+      "website": "https://montanaazul.com",
+      "logo": "images/montana-azul.webp",
+      "membership": 1,
+      "email": "info@montanaazul.com"
+    },
+    {
+      "name": "Trujillo Tech Solutions",
+      "address": "Calle Sucre, Trujillo, Venezuela",
+      "phone": "(0271) 222-2222",
+      "website": "https://trujillotech.com",
+      "logo": "images/trujillo-tech.webp",
+      "membership": 2,
+      "email": "support@trujillotech.com"
+    },
+    {
+      "name": "Artesanías Los Andes",
+      "address": "Centro Histórico, Trujillo, Venezuela",
+      "phone": "(0271) 333-3333",
+      "website": "https://artesaniaslosandes.com",
+      "logo": "images/artesanias-los-andes.webp",
+      "membership": 2,
+      "email": "sales@artesaniaslosandes.com"
+    },
+    {
+      "name": "Restaurante Sabor Criollo",
+      "address": "Av. Libertador, Trujillo, Venezuela",
+      "phone": "(0271) 444-4444",
+      "website": "https://saborcriollo.com",
+      "logo": "images/sabor-criollo.webp",
+      "membership": 1,
+      "email": "contact@saborcriollo.com"
+    },
+    {
+      "name": "Hotel Vista del Valle",
+      "address": "Carretera Panamericana, Trujillo, Venezuela",
+      "phone": "(0271) 666-6666",
+      "website": "https://vistadelvalle.com",
+      "logo": "images/vista-del-valle.webp",
+      "membership": 1,
+      "email": "reservations@vistadelvalle.com"
+    },
+    {
+      "name": "Auto Express Trujillo",
+      "address": "Av. Comercial, Trujillo, Venezuela",
+      "phone": "(0271) 777-7777",
+      "website": "https://autoexpresstrujillo.com",
+      "logo": "images/auto-express.webp",
+      "membership": 2,
+      "email": "service@autoexpresstrujillo.com"
+    },
+    {
+      "name": "Farmacia San Rafael",
+      "address": "Esquina San Rafael, Trujillo, Venezuela",
+      "phone": "(0271) 888-8888",
+      "website": "https://farmaciasanrafael.com",
+      "logo": "images/farmacia-san-rafael.webp",
+      "membership": 1,
+      "email": "info@farmaciasanrafael.com"
+    },
+    {
+      "name": "Librería El Pensador",
+      "address": "Calle Miranda, Trujillo, Venezuela",
+      "phone": "(0271) 999-9999",
+      "website": "https://elpensadorlibros.com",
+      "logo": "images/libreria-pensador.webp",
+      "membership": 3,
+      "email": "contact@elpensadorlibros.com"
+    },
+    {
+      "name": "Panadería La Abuela",
+      "address": "Av. Independencia, Trujillo, Venezuela",
+      "phone": "(0271) 101-0101",
+      "website": "https://panaderialaabuela.com",
+      "logo": "images/panaderia-abuela.webp",
+      "membership": 1,
+      "email": "orders@panaderialaabuela.com"
+    },
+    {
+      "name": "Gimnasio Fuerza Andina",
+      "address": "Calle Bolívar, Trujillo, Venezuela",
+      "phone": "(0271) 202-0202",
+      "website": "https://fuerzaandina.com",
+      "logo": "images/gimnasio-fuerza.webp",
+      "membership": 2,
+      "email": "info@fuerzaandina.com"
+    },
+    {
+      "name": "Agencia de Viajes Andes Tours",
+      "address": "Calle Comercio, Trujillo, Venezuela",
+      "phone": "(0271) 303-0303",
+      "website": "https://andestours.com",
+      "logo": "images/andes-tours.webp",
+      "membership": 3,
+      "email": "viajesandes@gmail.com"
+      }
+  ]
+}
