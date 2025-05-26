@@ -12,6 +12,42 @@ function getWeekday(dateString) {
     return date.toLocaleDateString(undefined, { weekday: 'long' });
 }
 
+function getCurrentWeatherCard(data) {
+    const div = document.createElement("div");
+    div.className = "weather-info section-box";
+
+    const icon = document.createElement("img");
+    icon.id = "weather-icon";
+    icon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+    icon.alt = data.weather[0].description;
+    icon.width = 100;
+    icon.height = 100;
+    icon.loading = "lazy";
+    div.appendChild(icon);
+
+    const tempP = document.createElement("p");
+    tempP.innerHTML = `<strong>Temperature:</strong> <span>${Math.round(data.main.temp)}°F</span>`;
+    div.appendChild(tempP);
+
+    const descP = document.createElement("p");
+    descP.innerHTML = `<strong>Description:</strong> <span>${data.weather[0].description}</span>`;
+    div.appendChild(descP);
+
+    const highLowP = document.createElement("p");
+    highLowP.innerHTML = `<strong>High:</strong> <span>${Math.round(data.main.temp_max)}°F</span> | <strong>Low:</strong> <span>${Math.round(data.main.temp_min)}°F</span>`;
+    div.appendChild(highLowP);
+
+    const humidityP = document.createElement("p");
+    humidityP.innerHTML = `<strong>Humidity:</strong> <span>${data.main.humidity}%</span>`;
+    div.appendChild(humidityP);
+
+    const sunP = document.createElement("p");
+    sunP.innerHTML = `<strong>Sunrise:</strong> <span>${formatTime(data.sys.sunrise, data.timezone)}</span> | <strong>Sunset:</strong> <span>${formatTime(data.sys.sunset, data.timezone)}</span>`;
+    div.appendChild(sunP);
+
+    return div;
+}
+
 async function getCurrentWeather() {
     const url = `https://api.openweathermap.org/data/2.5/weather?units=imperial&lat=${lat}&lon=${lon}&appid=${key}`;
     try {
@@ -19,15 +55,8 @@ async function getCurrentWeather() {
         if (!response.ok) throw new Error("Failed to fetch current weather");
         const data = await response.json();
 
-        document.getElementById("weather-icon").src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
-        document.getElementById("weather-icon").alt = data.weather[0].description;
-        document.getElementById("temp").textContent = `${Math.round(data.main.temp)}°F`;
-        document.getElementById("description").textContent = data.weather[0].description;
-        document.getElementById("high-temp").textContent = `${Math.round(data.main.temp_max)}°F`;
-        document.getElementById("low-temp").textContent = `${Math.round(data.main.temp_min)}°F`;
-        document.getElementById("humidity").textContent = `${data.main.humidity}%`;
-        document.getElementById("sunrise").textContent = formatTime(data.sys.sunrise, data.timezone);
-        document.getElementById("sunset").textContent = formatTime(data.sys.sunset, data.timezone);
+        const section = document.getElementById("current-weather");
+        section.appendChild(getCurrentWeatherCard(data));
     } catch (error) {
         console.error(error);
     }
