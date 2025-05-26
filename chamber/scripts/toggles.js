@@ -17,19 +17,3 @@ document.addEventListener("DOMContentLoaded", () => {
     gridToggle.classList.remove("tg-active");
   });
 });
-
-
-const hamburger = document.querySelector("#HamMenu");
-const menu = document.querySelector("#Menu");
-const toggle = document.querySelector("#pageToggle");
-const directory = document.querySelector("#Directory-page");
-
-hamburger.addEventListener("click", function () {
-  menu.classList.toggle("active");
-  hamburger.classList.toggle("active");
-});
-
-toggle.addEventListener("click", function () {
-  toggle.classList.toggle("dark");
-  directory.classList.toggle("dark");
-});
