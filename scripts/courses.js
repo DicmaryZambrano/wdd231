@@ -78,11 +78,57 @@ const courses = [
   }
 ]
 
-function displayCourses(filter) {
+function populateDialog(course) {
+  dialogDetails.innerHTML = '';
+
+
+  const courseTitle = document.createElement("h2");
+  courseTitle.textContent = course.title;
+
+  const courseCredit = document.createElement("p");
+  courseCredit.textContent = `Credits: ${course.credits}`;
+
+  const certificate = document.createElement("p");
+  certificate.textContent = `Certificate: ${course.certificate}`;
+
+  const description = document.createElement("p");
+  description.textContent = course.description;
+
+  const techUl = document.createElement("ul");
+  if (Array.isArray(course.technology)) {
+    course.technology.forEach((item) => {
+      const techLi = document.createElement("li");
+      techLi.textContent = item;
+      techUl.appendChild(techLi);
+    });
+  }
+
+  const techLabel = document.createElement("p");
+  techLabel.textContent = "Technologies Covered:";
+
+  dialogDetails.append(courseTitle, courseCredit, certificate, description, techLabel, techUl);
+  courseDialog.showModal();
+}
+
+function displayCourses(filter, courses) {
+  courseContainer.innerHTML = '';
+
   const filteredCourses = filter ? courses.filter(course => course.subject === filter) : courses;
-  document.querySelector(".course-list").innerHTML = filteredCourses.map(course => `
-    <li class="course-item ${course.completed ? "completed" : ""}">${course.subject} ${course.number}</li>
-  `).join('');
+
+  filteredCourses.forEach((course) => {
+    const button = document.createElement("button");
+    button.addEventListener("click", () => populateDialog(course));
+
+    const courseItem = document.createElement("li");
+    courseItem.classList.add("course-item");
+    if (course.completed) {
+      courseItem.classList.add("completed");
+    }
+
+    courseItem.textContent = `${course.subject} ${course.number}`;
+    button.appendChild(courseItem);
+    courseContainer.appendChild(button);
+  });
 }
 
 function updateTotalCredits() {
@@ -91,19 +137,26 @@ function updateTotalCredits() {
     const course = courses.find(course => `${course.subject} ${course.number}` === item.textContent);
     return sum + (course ? course.credits : 0);
   }, 0);
-  
+
   document.querySelector("#total-credits").textContent = `Total Credits: ${totalCredits}`;
 }
 
-// Event listeners for buttons
-document.querySelector("#AllButton").addEventListener("click", () => displayCourses());
-document.querySelector("#CseButton").addEventListener("click", () => displayCourses("CSE"));
-document.querySelector("#WddButton").addEventListener("click", () => displayCourses("WDD"));
+
+document.querySelector("#AllButton").addEventListener("click", () => displayCourses("", courses));
+document.querySelector("#CseButton").addEventListener("click", () => displayCourses("CSE", courses));
+document.querySelector("#WddButton").addEventListener("click", () => displayCourses("WDD", courses));
+
+const courseContainer = document.querySelector(".course-list");
+const courseDialog = document.querySelector("#courseDetails");
+const dialogDetails = document.querySelector("#courseDetails div");
+const courseClose = document.querySelector("#courseDetails button");
+
+courseClose.addEventListener("click", () => courseDialog.close());
 
 document.querySelectorAll("button[data-subject='filter']").forEach(button => {
   button.addEventListener("click", () => setTimeout(updateTotalCredits, 100));
 });
 
 // Display all courses on page load
-displayCourses();
+displayCourses("", courses);
 updateTotalCredits();

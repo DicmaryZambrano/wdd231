@@ -156,6 +156,7 @@
   .forecast {
     flex-direction: column;
     justify-content: space-between;
+    margin: 0;
   }
 
   .forecast-item {
@@ -168,6 +169,52 @@
     width: 50px;
   }
 
+  /* Dialog */
+
+  .modal-close:hover {
+    background-color: var(--accent-color2);
+    color: var(--t-on-color);
+  }
+
+  .membership-form {
+    grid-column: 1/2;
+  }
+
+  .membership-levels {
+    grid-column: 2/3;
+  }
+
+  dialog {
+    margin: auto;
+    max-width: 700px;
+  }
+
+  .modal-close {
+    top: 2rem;
+    bottom: auto;
+    right: 2rem;
+  }
+
+  dialog[open] {
+    padding-bottom: 2rem;
+  }
+
+  dialog[open] img {
+    left: auto;
+    right: 0rem;
+  }
+
+  form input[type="submit"]:hover {
+    background-color: var(--accent-color2);
+    border: 2px solid var(--accent-color2);
+    color: var(--t-on-color);
+  }
+
+  .membership-cards button:hover {
+    background-color: var(--accent-color2);
+    border-color: var(--accent-color2r);
+    color: var(--t-on-color);
+  }
 
 }
 

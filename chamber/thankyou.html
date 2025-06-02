@@ -4,10 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trujillo Chamber - Join us</title>
+  <title>Trujillo Chamber - Thank You</title>
   <meta name="author" content="Dicmary Zambrano">
   <meta name="description"
-    content="Become a member of the Trujillo Chamber of Commerce. You will have the opportunity to be a part of a big community.">
+    content="Discover businesses and members of the Trujillo Chamber of Commerce. Thank you for coming.">
   <link rel="icon" href="images/favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,7 +15,7 @@
     rel="stylesheet">
   <meta property="og:title" content="Trujillo Chamber Directory">
   <meta property="og:description"
-    content="Become a member of the Trujillo Chamber of Commerce. You will have the opportunity to be a part of a big community.">
+    content="Discover businesses and members of the Trujillo Chamber of Commerce. Thank you for coming.">
   <meta property="og:url" content="https://dicmaryzambrano.github.io/wdd231/chamber/directory.html">
   <meta property="og:locale" content="en_US">
   <meta property="og:image" content="https://dicmaryzambrano.github.io/wdd231/chamber/images/hero-medium.webp">
@@ -26,7 +26,7 @@
   <link rel="stylesheet" href="styles/larger.css">
   <script src="scripts/dates.js" defer></script>
   <script src="scripts/nav-toggles.js" defer></script>
-  <script src="scripts/membership.js" type="module"></script>
+  <script src="scripts/thankyou.js" defer></script>
 </head>
 
 <body id="BodyDark">
@@ -48,64 +48,19 @@
         <ul class="nav-list">
           <li class="nav-item"><a href="index.html">Home</a></li>
           <li class="nav-item"><a href="directory.html">Directory</a></li>
-          <li class="nav-item current"><a href="#">Join</a></li>
-          <li class="nav-item"><a href="#">Discover</a></li>
+          <li class="nav-item"><a href="join.html">Join</a></li>
+          <li class="nav-item"><a href="discover.html">Discover</a></li>
         </ul>
       </nav>
     </div>
   </header>
-  <main class="join">
-    <h1>Join Us</h1>
-    <section class="membership-form">
-      <h2>Membership Registration</h2>
-      <div class="form-box">
-        <form method="get" action="thankyou.html">
-          <label for="first-name">First Name:</label>
-          <input type="text" id="first-name" name="first-name" title="First Name" autocomplete="given-name" required>
-
-          <label for="last-name">Last Name:</label>
-          <input type="text" id="last-name" name="last-name" title="Last Name" autocomplete="family-name" required>
-
-          <label for="organization-title">Organization Name:</label>
-          <input type="text" id="organization-title" name="organization-title" title="Organization Name"
-            autocomplete="organization-title" pattern="[A-Za-z -]{7,}" required>
-
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" title="Email" autocomplete="email" placeholder="example@email.com"
-            required>
-
-          <label for="phone">Phone Number:</label>
-          <input type="tel" id="phone" name="phone" title="Phone Number" autocomplete="tel" required>
-
-          <label for="membership">Membership Level:</label>
-          <select id="membership" name="membership" required>
-            <option value="NP">NP Membership (Free)</option>
-            <option value="Bronze">Bronze Membership</option>
-            <option value="Silver">Silver Membership</option>
-            <option value="Gold">Gold Membership</option>
-          </select>
-
-          <label for="description">Organization Description:</label>
-          <textarea id="description" name="description" title="Description"></textarea>
-
-          <input type="hidden" id="timestamp" name="timestamp" value="">
-
-          <input type="submit" value="Join Chamber">
-        </form>
+  <main class="thankyou">
+    <section>
+      <h1>Thank you for joining</h1>
+      <div id="Results">
+        
       </div>
     </section>
-
-    <section class="membership-levels">
-      <h2>Membership Benefits</h2>
-      <div class="membership-cards">
-      </div>
-    </section>
-
-    <dialog id="modal-mb">
-      <div>
-      </div>
-      <button aria-label="Close dialog" class="modal-close">Close</button>
-    </dialog>
   </main>
   <footer>
     <div class="footer-box">
