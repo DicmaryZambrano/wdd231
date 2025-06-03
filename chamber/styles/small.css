@@ -541,14 +541,26 @@ a {
 
 /* THANKYOU */
 
+main.thankyou {
+  min-height: 100vh;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main.thankyou section {
+  width: 100%;
+  max-width: 600px;
+}
+
 #Results {
   padding: 1em;
-  background-color: #f9f9f9;
+  background-color: var(--bg-color2);
   border-radius: 8px;
-  max-width: 600px;
-  margin: 1em auto;
-  font-family: sans-serif;
+  margin-top: 1rem;
   color: var(--t-on-white);
+  font-family: sans-serif;
 }
 
 #Results h2 {
@@ -564,47 +576,11 @@ a {
 
 .form-results li {
   margin: 0.5em 0;
-  padding: 0.5em;
-  background: #fff;
-  border-left: 4px solid var(--accent-color1);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-#Results {
-  padding: 1rem;
-  background-color: var(--bg-color2);
-  border-radius: 8px;
-  max-width: 600px;
-  margin: 1rem auto;
-  color: var(--t-on-white);
-}
-
-#Results h2 {
-  color: var(--t-on-white);
-}
-
-.form-results {
-  list-style: none;
-  padding: 0;
-}
-
-.form-results li {
-  margin: 0.5em 0;
-  padding: 0.5em;
+  padding: 0.75em;
   background: var(--bg-color);
   border-left: 4px solid var(--accent-color1);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
-
-.thankyou {
-  height: 70vh;
-}
-
-.thankyou h1 {
-  margin-top: 5rem;
-  text-align: center;
-}
-
 
 dialog {
   margin-left: .5rem;

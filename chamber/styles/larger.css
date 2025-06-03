@@ -169,6 +169,21 @@
     width: 50px;
   }
 
+  /* Thank you */
+
+  main.thankyou {
+    padding: 3rem;
+  }
+
+  #Results {
+    padding: 2em;
+    margin-top: 2rem;
+  }
+
+  #Results h2 {
+    font-size: 2em;
+  }
+
   /* Dialog */
 
   .modal-close:hover {
