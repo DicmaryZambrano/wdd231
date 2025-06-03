@@ -79,11 +79,18 @@
 
           <label for="membership">Membership Level:</label>
           <select id="membership" name="membership" required>
+            <option value="" disabled selected hidden>Please select an option</option>
             <option value="NP">NP Membership (Free)</option>
             <option value="Bronze">Bronze Membership</option>
             <option value="Silver">Silver Membership</option>
             <option value="Gold">Gold Membership</option>
           </select>
+
+          <label for="website">Website:</label>
+          <input type="url" id="website" name="website" title="Organization Website" placeholder="https://example.com">
+
+          <label for="job-title">Job Title:</label>
+          <input type="text" id="job-title" name="job-title" title="Job Title" placeholder="Manager, Director, etc.">
 
           <label for="description">Organization Description:</label>
           <textarea id="description" name="description" title="Description"></textarea>
