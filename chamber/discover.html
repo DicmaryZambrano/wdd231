@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trujillo Chamber - Explore</title>
+  <meta name="author" content="Dicmary Zambrano">
+  <meta name="description"
+    content="Explore all the wonders of the Trujillo Chamber of Commerce. Take some time to see what the Chamber has to offer.">
+  <link rel="icon" href="images/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Barlow:wght@400;700;800;900&display=swap"
+    rel="stylesheet">
+  <meta property="og:title" content="Trujillo Chamber Directory">
+  <meta property="og:description"
+    content="Explore all the wonders of the Trujillo Chamber of Commerce. Take some time to see what the Chamber has to offer.">
+  <meta property="og:url" content="https://dicmaryzambrano.github.io/wdd231/chamber/directory.html">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://dicmaryzambrano.github.io/wdd231/chamber/images/hero-medium.webp">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Trujillo Chamber Directory">
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/small.css">
+  <link rel="stylesheet" href="styles/larger.css">
+  <script src="scripts/dates.js" defer></script>
+  <script src="scripts/nav-toggles.js" defer></script>
+  <script src="scripts/discover.js" type="module"></script>
+</head>
+
+<body id="BodyDark">
+  <header>
+    <div class="nav-box">
+      <button id="pageToggle" class="page-toggle" aria-label="Change Page Colors">
+        <img src="images/dark-theme.svg" alt="Toggle Page Colors Icon" width="30" height="30">
+      </button>
+      <button id="HamMenu" class="menu-toggle" aria-label="Open Menu">
+      </button>
+      <div class="logo">
+        <img src="images/tcoc-logo.webp" alt="Logo for the Trujillo Chamber of Commerce" width="80" height="80">
+        <div>
+          <span class="logo-title">Trujillo</span><br>
+          <span class="logo-subtitle">Chamber of Commerce</span>
+        </div>
+      </div>
+      <nav id="Menu" class="nav-menu" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="index.html">Home</a></li>
+          <li class="nav-item"><a href="directory.html">Directory</a></li>
+          <li class="nav-item"><a href="join.html">Join</a></li>
+          <li class="nav-item current"><a href="#">Discover</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main class="discover-grid">
+    <h1>Discover Trujillo</h1>
+    <section class="gallery" id="gallery">
+    </section>
+
+    <aside class="sidebar">
+      <h2>So good to see you!</h2>
+      <p id="visit-message"></p>
+
+      <hr>
+
+      <h3>Did You Know?</h3>
+      <p id="fun-fact">Loading fact...</p>
+
+      <hr>
+
+      <h3>Upcoming Local Events</h3>
+      <ul>
+        <li>Cosplay Contest - July 15</li>
+        <li>Horse Race in La Morita - July 20</li>
+        <li>Trujillo Independence Parade - Dec 29</li>
+      </ul>
+
+      <hr>
+
+      <h3>Tips for Visitors</h3>
+      <ul>
+        <li>Stay hydrated 🌞</li>
+        <li>Visit the Monumento de la Paz 🕊️</li>
+        <li>Check out local crafts 🧵</li>
+      </ul>
+    </aside>
+  </main>
+  <footer>
+    <div class="footer-box">
+      <div class="footer-address">
+        <p><strong>Trujillo Chamber of Commerce</strong></p>
+        <p>Av. Libertador 123, Trujillo, Venezuela</p>
+      </div>
+
+      <div class="footer-social">
+        <p>Follow us on social media:</p>
+        <div class="social-icons">
+          <a href="https://facebook.com"><img src="images/facebook.svg" loading="lazy" alt="Facebook" width="48"
+              height="48"></a>
+          <a href="https://x.com"><img src="images/twitter.svg" alt="Twitter" loading="lazy" width="48" height="48"></a>
+          <a href="https://instagram.com"><img src="images/instagram.svg" alt="Instagram" loading="lazy" width="48"
+              height="48"></a>
+        </div>
+      </div>
+
+      <div class="footer-credits">
+        <p>WDD231 Dicmary Zambrano Class Project</p>
+        <p><span id="date"></span> Trujillo Chamber of Commerce</p>
+        <p id="lastModified" aria-live="polite"></p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

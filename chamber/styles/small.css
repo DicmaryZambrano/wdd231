@@ -745,6 +745,66 @@ select:valid {
   border-left: 2px solid green;
 }
 
+/* DISCOVER */
+
+.discover-grid {
+  display: grid;
+  grid-template-areas:
+    "h1"
+    "sidebar"
+    "gallery";
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.discover-grid h1 {
+  grid-area: h1;
+}
+
+.gallery {
+  grid-area: gallery;
+  display: grid;
+  gap: 1rem;
+}
+
+.sidebar {
+  color: var(--t-on-white);
+  grid-area: sidebar;
+  background-color: var(--bg-color2);
+  padding: 1rem;
+}
+
+.discover_card {
+  color: var(--t-on-white);
+  border: 1px solid #ccc;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--bg-color2);
+}
+
+.discover_card img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: .5rem;
+  justify-self: center;
+}
+
+.discover_card button {
+  align-self: flex-end;
+  background-color: var(--accent-color1);
+  padding: .5rem;
+  border-radius: .5rem;
+}
+
+.discover_card button:hover {
+  color: var(--t-on-color);
+  background-color: var(--accent-color2);
+}
+
+
 /* FOOTER */
 
 footer {

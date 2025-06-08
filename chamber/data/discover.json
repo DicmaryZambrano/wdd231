@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Valera Comics",
+    "address": "Trujillo, Valera, La Morita",
+    "description": "A popular event for gamers and cosplayers in Valera.",
+    "image": "images/valera-comic.webp"
+  },
+  {
+    "name": "Horse Race Festival",
+    "address": "Trujillo, Valera, La Morita",
+    "description": "A traditional horse race with cultural celebrations.",
+    "image": "images/horse-race.webp"
+  },
+  {
+    "name": "Independence Day of Trujillo",
+    "address": "Trujillo, Trujillo",
+    "description": "Held on December 29th, marking Trujillo's proclamation of independence.",
+    "image": "images/independence-day.webp"
+  },
+  {
+    "name": "Fiestas Patrias",
+    "address": "Trujillo, Trujillo",
+    "description": "Trujillos's national independence day celebrated in Trujillo.",
+    "image": "images/fiestas-patrias.webp"
+  },
+  {
+    "name": "International Spring Festival",
+    "address": "Trujillo, Trujillo",
+    "description": "Celebration of the eternal spring in Trujillo.",
+    "image": "images/spring-festival.webp"
+  },
+  {
+    "name": "Trujillo Chapel",
+    "address": "Trujillo, Truijllo",
+    "description": "The trujillo chapel is a beautiful sight to see, the bells of the chapel resound thought the whole plaza.",
+    "image": "images/chapel.webp"
+  },
+  {
+    "name": "Monumento de la Paz",
+    "address": "Trujillo, Los Andes",
+    "description": "A landmark symbolizing peace and history.",
+    "image": "images/monumento-paz.webp"
+  },
+  {
+    "name": "DAKA Furnishings",
+    "address": "Trujillo, Valera",
+    "description": "A local furnishing company with traditional craftsmanship.",
+    "image": "images/daka.webp"
+  }
+]

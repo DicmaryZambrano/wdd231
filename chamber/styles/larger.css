@@ -231,6 +231,28 @@
     color: var(--t-on-color);
   }
 
+  /* DISCOVER */
+
+  .discover-grid {
+    grid-template-areas:
+      "h1 h1"
+      "sidebar gallery";
+    grid-template-columns: 300px 1fr;
+    align-items: start;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .discover_card img {
+    transition: box-shadow 0.3s ease;
+  }
+
+  .discover_card:hover img {
+    box-shadow: 0 0 40px rgba(255, 196, 0, 0.651);
+  }
+
 }
 
 @media screen and (min-width: 1024px) {
