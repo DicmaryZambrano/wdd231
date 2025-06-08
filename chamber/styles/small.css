@@ -36,10 +36,6 @@ body {
   font-style: normal;
 }
 
-.dark-mode {
-  background-color: var(--bg-color-dark);
-}
-
 h1,
 h2,
 h3,
@@ -774,22 +770,40 @@ select:valid {
   padding: 1rem;
 }
 
+.sidebar h2 {
+  color: var(--t-on-white) !important;
+}
+
 .discover_card {
+  display: grid;
+  grid-template-areas:
+    "image"
+    "title"
+    "description"
+    "address"
+    "button";
+  gap: 0.5rem;
   color: var(--t-on-white);
   border: 1px solid #ccc;
   padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   background-color: var(--bg-color2);
 }
 
-.discover_card img {
-  width: 100%;
-  max-width: 300px;
-  height: auto;
-  border-radius: .5rem;
-  justify-self: center;
+.discover_card h2 {
+  color: var(--t-on-white) !important;
+  grid-area: title;
+}
+
+.discover_card figure {
+  grid-area: image;
+}
+
+.discover_card p {
+  grid-area: description;
+}
+
+.discover_card address {
+  grid-area: address;
 }
 
 .discover_card button {
@@ -797,11 +811,15 @@ select:valid {
   background-color: var(--accent-color1);
   padding: .5rem;
   border-radius: .5rem;
+  grid-area: button;
 }
 
-.discover_card button:hover {
-  color: var(--t-on-color);
-  background-color: var(--accent-color2);
+.discover_card img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin: 0 auto;
+  border-radius: .5rem;
 }
 
 

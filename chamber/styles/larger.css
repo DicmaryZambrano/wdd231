@@ -236,13 +236,15 @@
   .discover-grid {
     grid-template-areas:
       "h1 h1"
-      "sidebar gallery";
+      "sidebar sidebar"
+      "gallery gallery";
     grid-template-columns: 300px 1fr;
     align-items: start;
   }
 
-  .gallery {
-    grid-template-columns: 1fr 1fr;
+  .discover_card button:hover {
+    color: var(--t-on-color);
+    background-color: var(--accent-color2);
   }
 
   .discover_card img {
@@ -253,11 +255,40 @@
     box-shadow: 0 0 40px rgba(255, 196, 0, 0.651);
   }
 
+  .discover_card {
+    grid-template-areas:
+      "image title"
+      "image description"
+      "image address"
+      ". button";
+    grid-template-columns: 1fr 2fr;
+    align-items: start;
+  }
+
+  .discover_card figure {
+    max-width: 100%;
+  }
+
 }
 
 @media screen and (min-width: 1024px) {
   body {
     font-size: 20px;
+  }
+
+  .discover-grid {
+    grid-template-areas:
+      "h1 h1"
+      "sidebar gallery";
+  }
+
+  .discover_card {
+    grid-template-areas:
+      "title title"
+      "image description"
+      "image address"
+      ". button";
+    grid-template-columns: 1fr 2fr;
   }
 
   .hero-text {
