@@ -32,7 +32,7 @@ localStorage.setItem("lastVisit", now.toString());
 const url = "./data/discover.json";
 const gallery = document.getElementById("gallery");
 
-function generateItemCard(data) {
+function generateItemCard(data, index) {
   const card = document.createElement("div");
   card.classList.add("discover_card");
 
@@ -46,7 +46,12 @@ function generateItemCard(data) {
   img.alt = data.name;
   img.width = 300;
   img.height = 200;
-  img.loading = "lazy";
+
+  // Only apply lazy loading for items after the first 6
+  if (index >= 6) {
+    img.loading = "lazy";
+  }
+
   figure.appendChild(img);
   card.appendChild(figure);
 
@@ -66,8 +71,8 @@ function generateItemCard(data) {
 }
 
 function displayItems(items) {
-  items.forEach((item) => {
-    const card = generateItemCard(item);
+  items.forEach((item, index) => {
+    const card = generateItemCard(item, index);
     gallery.appendChild(card);
   });
 }
