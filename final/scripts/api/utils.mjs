@@ -8,7 +8,7 @@ export function getQueryParams() {
   const params = new URLSearchParams(window.location.search);
   return {
     search: params.get("search") || "",
-    category: params.get("category") || "Vegetarian",
+    category: params.get("category") || "Breakfast",
     area: params.get("area") || "",
     sort: params.get("sort") || "",
   };

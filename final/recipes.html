@@ -65,30 +65,58 @@
         explore our delicious recipes!
       </h2>
       <form id="recipeFilterForm">
-        <input type="text" name="search" placeholder="Search by name" />
+        <fieldset>
+          <legend>Search Recipes</legend>
+          <label for="search">Search by name</label>
+          <input type="text" id="search" name="search" placeholder="Search by name" />
+        </fieldset>
 
-        <select name="category">
-          <option value="Vegetarian">Vegetarian</option>
-          <option value="Beef">Beef</option>
-          <option value="Dessert">Dessert</option>
-          <option value="Seafood">Seafood</option>
-          <option value="Chicken">Chicken</option>
-        </select>
+        <fieldset>
+          <legend>Category</legend>
+          <label for="category">Choose a category</label>
+          <select id="category" name="category">
+            <option value="" hidden disabled selected></option>
+            <option value="Breakfast">Breakfast</option>
+            <option value="Beef">Beef</option>
+            <option value="Chicken">Chicken</option>
+            <option value="Dessert">Dessert</option>
+            <option value="Seafood">Seafood</option>
+            <option value="Side">Side</option>
+            <option value="Starter">Starter</option>
+            <option value="Vegetarian">Vegetarian</option>
+          </select>
+        </fieldset>
 
-        <select name="area">
-          <option value="">All Areas</option>
-          <option value="Italian">Italian</option>
-          <option value="British">British</option>
-          <option value="American">American</option>
-          <option value="Indian">Indian</option>
-          <option value="Japanese">Japanese</option>
-        </select>
+        <fieldset>
+          <legend>Area</legend>
+          <label for="area">Choose an area</label>
+          <select id="area" name="area">
+            <option value="">All Areas</option>
+            <option value="American">American</option>
+            <option value="British">British</option>
+            <option value="Indian">Indian</option>
+            <option value="Italian">Italian</option>
+            <option value="Japanese">Japanese</option>
+            <option value="Mexican">Mexican</option>
+            <option value="Russian">Russian</option>
+          </select>
+        </fieldset>
 
-        <select name="sort">
-          <option value="">No Sort</option>
-          <option value="az">A-Z</option>
-          <option value="za">Z-A</option>
-        </select>
+        <fieldset>
+          <legend>Sort</legend>
+          <label>
+            <input type="radio" name="sort" value="" checked>
+            No Sort
+          </label>
+          <label>
+            <input type="radio" name="sort" value="az">
+            A-Z
+          </label>
+          <label>
+            <input type="radio" name="sort" value="za">
+            Z-A
+          </label>
+        </fieldset>
 
         <button type="submit">Apply Filters</button>
       </form>
