@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foodie Finds - Home</title>
+  <link rel="icon" href="image/favicon.ico">
+  <meta name="author" content="Dicmary Zambrano">
+  <meta name="description" content="The Foodie Finds home page, you can explore new recipes here.">
+  <link rel="icon" href="images/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Outfit:wght@100..900&display=swap"
+    rel="stylesheet">
+  <meta property="og:title" content="Foodie Finds - Home">
+  <meta property="og:description" content="The Foodie Finds home page, you can explore new recipes here.">
+  <meta property="og:url" content="https://dicmaryzambrano.github.io/wdd231/final/index.html">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://dicmaryzambrano.github.io/wdd231/final/images/pizza-medium.webp">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Foodie Finds - Home">
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/small.css">
+  <link rel="stylesheet" href="styles/larger.css">
+  <script src="scripts/home.js" type="module" defer></script>
+</head>
+
+<body>
+  <header>
+    <div class="nav-box">
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/foodie-logo.webp" alt="Logo for the Foodie Finds Page" width="200" height="82">
+        </a>
+      </div>
+      <nav id="Menu" class="nav-menu" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li class="nav-item current"><a href="index.html">Home</a></li>
+          <li class="nav-item"><a href="recipes.html">Recipes</a></li>
+          <li class="nav-item"><a href="favorites.html">Favorites</a></li>
+          <li class="nav-item"><a href="join.html">Join Forum</a></li>
+        </ul>
+      </nav>
+      <div class="nav-buttons">
+        <button id="HamMenu" class="hamburger" aria-label="Toggle Navigation Menu">
+          <span class="bar top"></span>
+          <span class="bar middle"></span>
+          <span class="bar bottom"></span>
+        </button>
+        <button id="PageToggle" class="page-toggle" aria-label="Change Page Colors">
+          <img src="images/dark-theme.svg" alt="Toggle Page Colors Icon" width="32" height="32">
+        </button>
+      </div>
+    </div>
+  </header>
+  <section class="hero">
+    <div class="hero-box">
+      <div class="hero-text">
+        <h2 class="hero-title">Welcome to our <span class="highlight">blog</span>, there is a world or flavor waiting!
+        </h2>
+        <p class="hero-subtitle">You are welcome to join the food blog.</p>
+        <a href="join.html" class="btn">Join the club!</a>
+      </div>
+      <div class="animation-box">
+        <img class="rotating-image" src="images/pizza.webp" alt="A photo of a pizza" width="400" height="400">
+      </div>
+    </div>
+    <div class="hero-background">
+      <picture>
+        <source media="(max-width: 600px)" srcset="images/background-small.webp">
+        <source media="(min-width: 601px) and (max-width: 1280px)" srcset="images/background-medium.webp">
+        <img src="images/background-big.webp" alt="Decorative background image" width="1280" height="720">
+      </picture>
+    </div>
+  </section>
+  <main class="home">
+
+    <div class="ad" id="AdBox">
+      <button id="CloseAdd" class="ad-button" aria-label="Close Advertisement">
+        <img src="images/close.svg" alt="Close Advertisement" width="32" height="32" class="close-ad">
+      </button>
+      <h2>Advertisement</h2>
+      <p>Check out our latest kitchen gadgets and tools to elevate your cooking experience!</p>
+      <a href="#" class="ad-link">Shop Now</a>
+    </div>
+
+    <h1>Home</h1>
+    <section class="welcome">
+      <h2>Welcome to Foodie Finds!</h2>
+      <p>Discover a world of flavors and culinary delights. Whether you're a seasoned chef or just starting out, our
+        blog
+        is your go-to source for delicious recipes, cooking tips, and food inspiration. Join our community of food
+        lovers
+        and embark on a culinary journey with us!</p>
+      <div class="welcome-cards">
+        <div class="card">
+          <img src="images/vegetable.svg" alt="Vegetable icon" width="32" height="32">
+          <h3>Navigate and find the recipes you will love</h3>
+          <p>Browse a growing collection of hand-picked dishes made for every craving, season, and skill level.</p>
+        </div>
+        <div class="card">
+          <img src="images/heart.svg" alt="Heart icon" width="32" height="32">
+          <h3>See something you like? Fav it!</h3>
+          <p>Save your favorites in one click and build your personal cookbook right on the site.</p>
+        </div>
+        <div class="card">
+          <img src="images/search.svg" alt="Search icon" width="32" height="32">
+          <h3>Click on a recipe to see how to make it</h3>
+          <p>Each recipe comes with easy steps, ingredients, and tips to make your cooking a breeze.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="categories">
+      <h2>Top Categories</h2>
+      <div class="category-grid">
+
+        <div class="category-box dessert">
+          <div class="category-text">
+            <h3>Desserts</h3>
+            <p>Sweeten your day with decadent treats, from gooey brownies to creamy no-bake wonders.</p>
+            <a href="recipes.html?category=dessert">
+              See Desserts
+            </a>
+          </div>
+          <div class="category-img">
+            <img src="images/dessert.webp" alt="a photo of an ice cream" width="200" height="200">
+          </div>
+        </div>
+
+        <div class="category-box meat">
+          <div class="category-text">
+            <h3>Meat</h3>
+            <p>Savor bold, hearty flavors with perfectly seasoned meats. From classic roasts to smoky BBQ.</p>
+            <a href="recipes.html?category=meat">
+              See Savory
+            </a>
+          </div>
+          <div class="category-img">
+            <img src="images/meat-based.webp" alt="a photo of meat" width="200" height="200">
+          </div>
+        </div>
+
+        <div class="category-box vegan">
+          <div class="category-text">
+            <h3>Vegan</h3>
+            <p>Plant-powered and full of flavor. Discover colorful, nourishing meals that even meat lovers will crave.
+            </p>
+            <a href="recipes.html?category=vegetarian">
+              See Vegan
+            </a>
+          </div>
+          <div class="category-img">
+            <img src="images/vegetables.webp" alt="a photo of vegetables" width="200" height="200">
+          </div>
+        </div>
+
+        <div class="category-box seafood">
+          <div class="category-text">
+            <h3>Seafood</h3>
+            <p>Delicious treats directly from the sea, see all the marine goodies that are available for you to make.</p>
+            <a href="recipes.html?category=seafood">
+              See Seafood
+            </a>
+          </div>
+          <div class="category-img">
+            <img src="images/seafood.webp" alt="a photo of seafood" width="200" height="200">
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <section class="featured-recipes">
+      <h2>Featured Recipes</h2>
+      <div class="recipe-cards">
+      </div>
+      <a href="recipes.html">See All</a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-box">
+      <div class="footer-column">
+        <p><strong>Foodie Finds</strong></p>
+        <p>Av. Libertador 123<br>Trujillo, Venezuela</p>
+      </div>
+
+      <div class="footer-column">
+        <h4>Navigate</h4>
+        <ul class="footer-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="recipes.html">Recipes</a></li>
+          <li><a href="favorites.html">Favorites</a></li>
+          <li><a href="join.html">Join Forum</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+          <a href="https://facebook.com"><img src="images/facebook.svg" alt="Facebook" width="32" height="32"></a>
+          <a href="https://x.com"><img src="images/twitter.svg" alt="Twitter" width="32" height="32"></a>
+          <a href="https://instagram.com"><img src="images/instagram.svg" alt="Instagram" width="32" height="32"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>WDD231 Dicmary Zambrano Final Project</p>
+      <p><span id="Date"></span> Foodie Finds</p>
+      <p id="LastModified" aria-live="polite"></p>
+      <a class="attributions" href="credit.html">Attributions</a>
+    </div>
+  </footer>
+</body>
+
+</html>
