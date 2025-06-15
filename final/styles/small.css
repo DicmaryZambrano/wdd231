@@ -62,10 +62,6 @@
   filter: invert(100%);
 }
 
-[data-theme="dark"] .card img {
-  filter: invert(100%);
-}
-
 *,
 *:before,
 *:after {
@@ -361,27 +357,24 @@ header {
   transform: translateY(-10px) rotate(-45deg);
 }
 
-/* Home */
+/* cards */
 
-.ad {
-  position: relative;
+.container-box {
+  padding: 1rem;
+  background-color: var(--bg-color2);
+  border-radius: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 1.5rem;
-  padding-top: 3rem;
-  background-color: var(--bg-color2);
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 6px rgba(122, 122, 122, 0.548);
+  text-align: center;
+  gap: 1rem;
 }
 
-.ad-button {
-  position: absolute;
-  padding: .1rem;
-  top: 1rem;
-  right: 1rem;
+.container-box img{
+  max-width: 60px;
 }
+
+/* Home */
 
 .welcome-cards {
   display: flex;
@@ -392,21 +385,6 @@ header {
   margin-top: 2rem;
   margin-bottom: 2rem;
   max-width: 900px;
-}
-
-.card {
-  padding: 1rem;
-  background-color: var(--bg-color2);
-  border-radius: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 2rem;
-}
-
-.card img {
-  width: 80px;
 }
 
 .category-grid {
@@ -424,6 +402,7 @@ header {
   gap: 1rem;
   border-radius: 1rem;
   overflow: hidden;
+  background-color: var(--bg-color2);
 }
 
 .category-text {
@@ -440,47 +419,6 @@ header {
   flex: 1;
   align-self: flex-end;
 }
-
-.dessert {
-  background-color: #ffa3ba;
-  border: 2px solid #c73f58;
-  color: #2e0507;
-}
-
-.dessert a {
-  color: #640a0e;
-}
-
-.meat {
-  background-color: #f89e98;
-  border: 2px solid #c7663f;
-  color: rgb(0, 0, 0);
-}
-
-.meat a {
-  color: #642e0a;
-}
-
-.vegan {
-  background-color: #c1ff88;
-  border: 2px solid #71c73f;
-  color: #082e05;
-}
-
-.vegan a {
-  color: #0a6416;
-}
-
-.seafood {
-  background-color: #88b8ff;
-  border: 2px solid #3f58c7;
-  color: #0e052e;
-}
-
-.seafood a {
-  color: #0a1064;
-}
-
 
 /* Recipes*/
 
@@ -559,10 +497,7 @@ label {
   font-size: 0.9rem;
 }
 
-input[type="text"],
-input[type="tel"],
-input[type="date"],
-input[type="email"],
+input:not([type="radio"]):not([type="submit"]),
 select,
 textarea {
   padding: 0.4rem;

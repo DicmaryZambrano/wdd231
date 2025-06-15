@@ -1,21 +1,32 @@
 import { initThemeToggle, initMenuToggle } from './modules/toggles.mjs';
 import { populateDates } from './modules/populate-dates.mjs';
-import { getQueryParams, updateQueryParams, fetchData } from "./api/utils.mjs";
+import { getQueryParams, updateQueryParams, fetchData, capitalize } from "./api/utils.mjs";
 import { renderRecipeCards } from "./modules/renderCards.mjs";
 
 export async function fetchAndRenderRecipes({ search, category, area, sort }) {
-  const endpoint = search
-    ? `https://www.themealdb.com/api/json/v1/1/search.php?s=${search}`
-    : `https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`;
+  let meals = [];
 
-  const res = await fetchData(endpoint);
-  let meals = res?.meals || [];
+  if (search) {
+    // Get all matches by name
+    const res = await fetchData(`https://www.themealdb.com/api/json/v1/1/search.php?s=${search}`);
+    meals = res?.meals || [];
 
-  // Area filtering
-  if (area) {
+    // Filter by category if needed
+    if (category) {
+      meals = meals.filter(meal => meal?.strCategory === category);
+    }
+  } else if (category) {
+    // Get meals by category
+    const res = await fetchData(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${capitalize(category)}`);
+    meals = res?.meals || [];
+  }
+
+  // If area is specified, fetch full data and filter
+  if (area && meals.length > 0) {
     const fullMeals = await Promise.all(
       meals.map(async meal => {
-        const fullData = await fetchData(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${meal.idMeal}`);
+        const id = meal.idMeal;
+        const fullData = await fetchData(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`);
         return fullData?.meals?.[0];
       })
     );
@@ -41,9 +52,9 @@ form.addEventListener("submit", async (e) => {
   const formData = new FormData(form);
   const filters = {
     search: formData.get("search"),
-    category: formData.get("category"),
-    area: formData.get("area"),
-    sort: formData.get("sort"),
+    category: capitalize(formData.get("c")),
+    area: capitalize(formData.get("a")),
+    sort: formData.get("s")
   };
 
   updateQueryParams(filters);
@@ -54,9 +65,9 @@ window.addEventListener("DOMContentLoaded", () => {
   const filters = getQueryParams();
 
   document.querySelector('[name="search"]').value = filters.search;
-  document.querySelector('[name="category"]').value = filters.category;
-  document.querySelector('[name="area"]').value = filters.area;
-  document.querySelector('[name="sort"]').value = filters.sort;
+  document.querySelector('[name="c"]').value = filters.category.toLowerCase();
+  document.querySelector('[name="a"]').value = filters.area.toLowerCase();
+  document.querySelector(`[name="s"][value="${filters.sort}"]`).checked = true;
 
   fetchAndRenderRecipes(filters);
 });
