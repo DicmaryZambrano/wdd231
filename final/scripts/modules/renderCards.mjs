@@ -29,6 +29,7 @@ export function renderRecipeCards(data, container, showButton = true) {
     if (showButton) {
       const viewBtn = document.createElement("button");
       viewBtn.textContent = "View Details";
+      viewBtn.ariaLabel = "Open Dialog";
       viewBtn.addEventListener("click", () => showRecipeDialog(recipe));
       card.appendChild(viewBtn);
     }
