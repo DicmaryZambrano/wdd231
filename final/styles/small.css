@@ -415,11 +415,11 @@ header {
 
 /* Recipes*/
 
-.recipe-filter {
+#recipeFilterForm {
   max-width: 300px;
 }
 
-.recipe-cards {
+#recipesCards {
   display: grid;
   gap: 1rem;
   padding: 1rem;

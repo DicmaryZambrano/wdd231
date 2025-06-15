@@ -116,15 +116,12 @@
     grid-template-columns: 300px;
   }
 
-  .recipe-filter {
+  #recipeFilterForm {
+    grid-column: 1/2;
     height: 650px;
   }
 
-  .recipe-filter {
-    grid-column: 1/2;
-  }
-
-  .recipe-cards {
+  #recipesCards {
     grid-column: 2/3;
   }
 

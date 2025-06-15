@@ -4,7 +4,7 @@ import { fetchData } from "./api/utils.mjs";
 import { renderRecipeCards } from "./modules/renderCards.mjs";
 
 async function showFeaturedRecipes() {
-  const container = document.getElementById("featuredCards");
+  const container = document.getElementById("recipesCards");
   const data = await fetchData(`https://www.themealdb.com/api/json/v1/1/filter.php?c=Breakfast`);
 
   const shuffled = data.meals.sort(() => 0.5 - Math.random()).slice(0, 8);

@@ -8,7 +8,7 @@ initThemeToggle("PageToggle");
 initMenuToggle("Menu", "HamMenu");
 populateDates("Date", "LastModified");
 
-const favoritesContainer = document.querySelector("#favoritesCards");
+const favoritesContainer = document.querySelector("#recipesCards");
 
 async function loadFavorites() {
   const ids = getFavorites();
