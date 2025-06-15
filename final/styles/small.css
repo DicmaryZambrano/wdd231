@@ -58,10 +58,6 @@
   filter: brightness(1.4) hue-rotate(30deg);
 }
 
-[data-theme="dark"] .close-ad {
-  filter: invert(100%);
-}
-
 *,
 *:before,
 *:after {
