@@ -14,7 +14,7 @@
     href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Outfit:wght@100..900&display=swap"
     rel="stylesheet">
   <meta property="og:title" content="Foodie Finds - Recipes">
-  <meta name="description" content="The foodie finds recipes page, you can explore new recipes here.">
+  <meta property="og:description" content="The foodie finds recipes page, you can explore new recipes here.">
   <meta property="og:url" content="https://dicmaryzambrano.github.io/wdd231/final/index.html">
   <meta property="og:locale" content="en_US">
   <meta property="og:image" content="https://dicmaryzambrano.github.io/wdd231/final/images/pizza.webp">
@@ -23,7 +23,7 @@
   <link rel="stylesheet" href="styles/normalize.css">
   <link rel="stylesheet" href="styles/small.css">
   <link rel="stylesheet" href="styles/larger.css">
-  <script src="scripts/recipes.js" type="module" defer></script>
+  <script src="scripts/recipes.js" type="module"></script>
 </head>
 
 <body>
@@ -37,7 +37,7 @@
       <nav id="Menu" class="nav-menu" aria-label="Main Navigation">
         <ul class="nav-list">
           <li><a href="index.html">Home</a></li>
-          <li  class="current"><a href="recipes.html">Recipes</a></li>
+          <li class="current"><a href="recipes.html">Recipes</a></li>
           <li><a href="favorites.html">Favorites</a></li>
           <li><a href="join.html">Join Forum</a></li>
         </ul>
@@ -67,14 +67,14 @@
         <fieldset>
           <legend>Search Recipes</legend>
           <label for="search">Search by name</label>
-          <input type="text" id="search" name="search" placeholder="Search by name" />
+          <input type="text" id="search" name="search" placeholder="Search by name">
         </fieldset>
 
         <fieldset>
           <legend>Category</legend>
           <label for="category">Choose a category</label>
           <select id="category" name="c">
-            <option value="" hidden disabled selected></option>
+            <option value="" hidden disabled selected>Choose a category</option>
             <option value="breakfast">Breakfast</option>
             <option value="beef">Beef</option>
             <option value="chicken">Chicken</option>
@@ -149,9 +149,11 @@
       <div class="footer-column">
         <p><strong>Foodie Finds</strong></p>
         <div class="social-icons">
-          <a href="https://facebook.com"><img src="images/facebook.svg" alt="Facebook" width="32" height="32" loading="lazy"></a>
+          <a href="https://facebook.com"><img src="images/facebook.svg" alt="Facebook" width="32" height="32"
+              loading="lazy"></a>
           <a href="https://x.com"><img src="images/twitter.svg" alt="Twitter" width="32" height="32" loading="lazy"></a>
-          <a href="https://instagram.com"><img src="images/instagram.svg" alt="Instagram" width="32" height="32" loading="lazy"></a>
+          <a href="https://instagram.com"><img src="images/instagram.svg" alt="Instagram" width="32" height="32"
+              loading="lazy"></a>
         </div>
       </div>
     </div>
