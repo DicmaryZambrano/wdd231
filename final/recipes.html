@@ -60,11 +60,11 @@
     <h1>
       Recipes
     </h1>
-    <section>
+    <section class="recipe-section">
       <h2>
         explore our delicious recipes!
       </h2>
-      <form id="recipeFilterForm">
+      <form id="recipeFilterForm" class="recipe-filter">
         <fieldset>
           <legend>Search Recipes</legend>
           <label for="search">Search by name</label>
@@ -118,13 +118,13 @@
           </label>
         </fieldset>
 
-        <button type="submit">Apply Filters</button>
+        <input type="submit" value="Apply Filter">
       </form>
       <div class="recipe-cards" id="recipesCards">
 
       </div>
-      <dialog id="modal">
-        <div></div>
+      <dialog id="modal" class="modal">
+        <div class="modal-content"></div>
         <button id="modalClose">Close</button>
       </dialog>
     </section>

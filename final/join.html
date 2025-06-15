@@ -7,7 +7,8 @@
   <title>Foodie Finds - Join</title>
   <link rel="icon" href="image/favicon.ico">
   <meta name="author" content="Dicmary Zambrano">
-  <meta name="description" content="Join the Foodie Finds forum to share and discover new recipes with fellow food enthusiasts.">
+  <meta name="description"
+    content="Join the Foodie Finds forum to share and discover new recipes with fellow food enthusiasts.">
   <link rel="icon" href="images/favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,7 +16,8 @@
     href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Outfit:wght@100..900&display=swap"
     rel="stylesheet">
   <meta property="og:title" content="Foodie Finds - Join">
-  <meta name="description" content="Join the Foodie Finds forum to share and discover new recipes with fellow food enthusiasts.">
+  <meta name="description"
+    content="Join the Foodie Finds forum to share and discover new recipes with fellow food enthusiasts.">
   <meta property="og:url" content="https://dicmaryzambrano.github.io/wdd231/final/join.html">
   <meta property="og:locale" content="en_US">
   <meta property="og:image" content="https://dicmaryzambrano.github.io/wdd231/final/images/pizza-medium.webp">
@@ -57,45 +59,114 @@
   </header>
 
   <main class="join">
-    <h1>
-      Join the Foodie Finds Forum
-    </h1>
+    <h1>Join Foodie Finds</h1>
+    <section class="join-form">
+      <h2>Tell Us About You</h2>
+      <div class="form-box">
+        <form method="get" action="thankyou.html">
+
+          <fieldset>
+            <legend>Personal Information</legend>
+
+            <label for="first-name">First Name:</label>
+            <input type="text" id="first-name" name="first-name" autocomplete="given-name" required
+              pattern="[A-Za-z\s\-]{2,}">
+
+            <label for="last-name">Last Name:</label>
+            <input type="text" id="last-name" name="last-name" autocomplete="family-name" required
+              pattern="[A-Za-z\s\-]{2,}">
+
+            <label for="birthday">Birthday:</label>
+            <input type="date" id="birthday" name="birthday" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" placeholder="+1 (555) 123-4567" autocomplete="tel"
+              pattern="[\d\s()+-]{7,}" required>
+          </fieldset>
+
+          <fieldset>
+            <legend>Foodie Info</legend>
+
+            <label for="food-preferences">Favorite Foods:</label>
+            <input type="text" id="food-preferences" name="food-preferences" placeholder="Tacos, pasta, sushi..."
+              pattern=".{2,}">
+
+            <label for="food-allergies">Food Allergies:</label>
+            <input type="text" id="food-allergies" name="food-allergies" placeholder="Peanuts, dairy, etc.">
+
+            <label for="diet">Dietary Preference:</label>
+            <select id="diet" name="diet">
+              <option value="">Please select an option</option>
+              <option value="none">None</option>
+              <option value="vegetarian">Vegetarian</option>
+              <option value="vegan">Vegan</option>
+              <option value="gluten-free">Gluten-Free</option>
+              <option value="pescatarian">Pescatarian</option>
+              <option value="keto">Keto</option>
+            </select>
+          </fieldset>
+
+          <fieldset>
+            <legend>Extra Info</legend>
+
+            <label for="blog-discovery">How did you find Foodie Finds?</label>
+            <select id="blog-discovery" name="blog-discovery" required>
+              <option value="">Please select an option</option>
+              <option value="social">Social Media</option>
+              <option value="search">Search Engine</option>
+              <option value="friend">Friend or Family</option>
+              <option value="other">Other</option>
+            </select>
+
+            <label for="bio">Short Bio or Message:</label>
+            <textarea id="bio" name="bio" rows="3" placeholder="Tell us a bit about yourself..."></textarea>
+          </fieldset>
+
+          <input type="hidden" id="timestamp" name="timestamp" value="">
+
+          <input type="submit" value="Join Foodie Finds">
+        </form>
+      </div>
+    </section>
   </main>
 
-<footer>
-  <div class="footer-box">
-    <div class="footer-column">
-      <p><strong>Foodie Finds</strong></p>
-      <p>Av. Libertador 123<br>Trujillo, Venezuela</p>
-    </div>
+  <footer>
+    <div class="footer-box">
+      <div class="footer-column">
+        <p><strong>Foodie Finds</strong></p>
+        <p>Av. Libertador 123<br>Trujillo, Venezuela</p>
+      </div>
 
-    <div class="footer-column">
-      <h4>Navigate</h4>
-      <ul class="footer-nav">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="recipes.html">Recipes</a></li>
-        <li><a href="favorites.html">Favorites</a></li>
-        <li><a href="join.html">Join Forum</a></li>
-      </ul>
-    </div>
+      <div class="footer-column">
+        <h4>Navigate</h4>
+        <ul class="footer-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="recipes.html">Recipes</a></li>
+          <li><a href="favorites.html">Favorites</a></li>
+          <li><a href="join.html">Join Forum</a></li>
+        </ul>
+      </div>
 
-    <div class="footer-column">
-      <h4>Follow Us</h4>
-      <div class="social-icons">
-        <a href="https://facebook.com"><img src="images/facebook.svg" alt="Facebook" width="32" height="32"></a>
-        <a href="https://x.com"><img src="images/twitter.svg" alt="Twitter" width="32" height="32"></a>
-        <a href="https://instagram.com"><img src="images/instagram.svg" alt="Instagram" width="32" height="32"></a>
+      <div class="footer-column">
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+          <a href="https://facebook.com"><img src="images/facebook.svg" alt="Facebook" width="32" height="32"></a>
+          <a href="https://x.com"><img src="images/twitter.svg" alt="Twitter" width="32" height="32"></a>
+          <a href="https://instagram.com"><img src="images/instagram.svg" alt="Instagram" width="32" height="32"></a>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="footer-bottom">
-    <p>WDD231 Dicmary Zambrano Final Project</p>
-    <p><span id="Date"></span> Foodie Finds</p>
-    <p id="LastModified" aria-live="polite"></p>
-    <a class="attributions" href="credit.html">Attributions</a>
-  </div>
-</footer>
+    <div class="footer-bottom">
+      <p>WDD231 Dicmary Zambrano Final Project</p>
+      <p><span id="Date"></span> Foodie Finds</p>
+      <p id="LastModified" aria-live="polite"></p>
+      <a class="attributions" href="credit.html">Attributions</a>
+    </div>
+  </footer>
 </body>
 
 </html>

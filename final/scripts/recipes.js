@@ -1,23 +1,23 @@
 import { initThemeToggle, initMenuToggle } from './modules/toggles.mjs';
 import { populateDates } from './modules/populate-dates.mjs';
-import { getQueryParams, updateQueryParams } from "./api/utils.mjs";
+import { getQueryParams, updateQueryParams, fetchData } from "./api/utils.mjs";
 import { renderRecipeCards } from "./modules/renderCards.mjs";
 
-async function fetchAndRenderRecipes({ search, category, area, sort }) {
+export async function fetchAndRenderRecipes({ search, category, area, sort }) {
   const endpoint = search
     ? `https://www.themealdb.com/api/json/v1/1/search.php?s=${search}`
     : `https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`;
 
-  const res = await fetch(endpoint);
-  let meals = (await res.json()).meals || [];
+  const res = await fetchData(endpoint);
+  let meals = res?.meals || [];
 
   // Area filtering
   if (area) {
     const fullMeals = await Promise.all(
-      meals.map(meal => fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${meal.idMeal}`)
-        .then(res => res.json())
-        .then(data => data.meals?.[0])
-      )
+      meals.map(async meal => {
+        const fullData = await fetchData(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${meal.idMeal}`);
+        return fullData?.meals?.[0];
+      })
     );
     meals = fullMeals.filter(meal => meal?.strArea === area);
   }
@@ -32,24 +32,9 @@ async function fetchAndRenderRecipes({ search, category, area, sort }) {
   renderRecipeCards(meals, exploreContainer);
 }
 
-window.addEventListener("DOMContentLoaded", () => {
-  const filters = getQueryParams();
-
-  document.querySelector('[name="search"]').value = filters.search;
-  document.querySelector('[name="category"]').value = filters.category;
-  document.querySelector('[name="area"]').value = filters.area;
-  document.querySelector('[name="sort"]').value = filters.sort;
-
-  fetchAndRenderRecipes(filters);
-});
-
 const form = document.getElementById("recipeFilterForm");
 const exploreContainer = document.getElementById("recipesCards");
 
-
-initThemeToggle("PageToggle");
-initMenuToggle("Menu", "HamMenu");
-populateDates("Date", "LastModified");
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -64,3 +49,18 @@ form.addEventListener("submit", async (e) => {
   updateQueryParams(filters);
   await fetchAndRenderRecipes(filters);
 });
+
+window.addEventListener("DOMContentLoaded", () => {
+  const filters = getQueryParams();
+
+  document.querySelector('[name="search"]').value = filters.search;
+  document.querySelector('[name="category"]').value = filters.category;
+  document.querySelector('[name="area"]').value = filters.area;
+  document.querySelector('[name="sort"]').value = filters.sort;
+
+  fetchAndRenderRecipes(filters);
+});
+
+initThemeToggle("PageToggle");
+initMenuToggle("Menu", "HamMenu");
+populateDates("Date", "LastModified");

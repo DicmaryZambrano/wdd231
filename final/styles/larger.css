@@ -43,8 +43,19 @@
   .nav-list a,
   .social-icons a,
   .hero-text .btn,
-  .page-toggle {
+  .page-toggle,
+  #modalClose,
+  .favorite-button {
     transition: transform 0.3s ease, color 0.3s ease;
+  }
+
+
+  input[type="submit"] {
+    transition: background-color 0.2s ease;
+  }
+
+  input[type="submit"]:hover {
+    background-color: #d37e38;
   }
 
   .nav-list a {
@@ -55,7 +66,9 @@
   .nav-list a:hover,
   .social-icons a:hover,
   .hero-text .btn:hover,
-  .page-toggle:hover {
+  .page-toggle:hover,
+  #modalClose:hover,
+  .favorite-button:hover {
     transform: translateY(-4px);
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   }
@@ -79,7 +92,6 @@
   }
 
   .category-box a:hover {
-    color: #000;
     text-decoration: underline;
   }
 
@@ -95,6 +107,33 @@
     margin-top: 1rem;
     position: static;
     display: inline-block;
+  }
+
+  /* Recipes */
+
+  .recipe-section {
+    display: grid;
+    grid-template-columns: 300px;
+  }
+
+  .recipe-filter {
+    height: 650px;
+  }
+
+  .recipe-filter {
+    grid-column: 1/2;
+  }
+
+  .recipe-cards {
+    grid-column: 2/3;
+  }
+
+  /* Dialog */
+
+  .dialog-body{
+    display: grid;
+    grid-template-columns: 300px auto;
+    gap: 3rem;
   }
 
   /* Footer */

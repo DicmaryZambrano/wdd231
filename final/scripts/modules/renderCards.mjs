@@ -1,7 +1,14 @@
 import { showRecipeDialog } from "./dialog.mjs";
 
-export function renderRecipeCards(data, container) {
+export function renderRecipeCards(data, container, showButton = true) {
   container.innerHTML = "";
+
+  if (!data || !Array.isArray(data) || data.length === 0) {
+    const message = document.createElement("p");
+    message.textContent = "No recipes found.";
+    container.appendChild(message);
+    return;
+  }
 
   data.forEach((recipe) => {
     const card = document.createElement("div");
@@ -11,16 +18,20 @@ export function renderRecipeCards(data, container) {
     title.textContent = recipe.strMeal;
 
     const img = document.createElement("img");
-    img.src = recipe.strMealThumb;
+    img.src = `${recipe.strMealThumb}/small`;
     img.alt = recipe.strMeal;
-    img.width = 200;
-    img.height = 200;
+    img.width = 150;
+    img.height = 150;
 
-    const button = document.createElement("button");
-    button.textContent = "View Details";
-    button.addEventListener("click", () => showRecipeDialog(recipe));
+    card.append(img, title);
 
-    card.append(img, title, button);
+    if (showButton) {
+      const viewBtn = document.createElement("button"); // avoid name collision
+      viewBtn.textContent = "View Details";
+      viewBtn.addEventListener("click", () => showRecipeDialog(recipe));
+      card.appendChild(viewBtn);
+    }
+
     container.appendChild(card);
   });
 }
