@@ -370,7 +370,7 @@ header {
   gap: 1rem;
 }
 
-.container-box img{
+.container-box img {
   max-width: 60px;
 }
 
@@ -552,75 +552,63 @@ input[type="submit"] {
 .modal-content {
   background-color: var(--bg-color2);
   color: var(--text-color-white);
-  padding-top: 60px;
   position: relative;
-}
-
-.recipe-dialog-content {
+  padding: 60px 1.5rem 1.5rem;
+  max-width: 800px;
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  max-width: 800px;
-  padding: 1.5rem;
 }
 
-.dialog-header h2 {
+.modal-content div:first-child h2 {
   margin: 0;
   font-size: 2rem;
   text-align: center;
 }
 
-.dialog-body {
+.modal-content aside,
+.modal-content article {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-.dialog-sidebar img {
-  border-radius: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-.dialog-sidebar iframe {
-  border-radius: 0.5rem;
-}
-
-.dialog-main p {
+.modal-content p {
   line-height: 1.6;
 }
 
-.dialog-main ul {
+.modal-content ul {
   padding-left: 1.2rem;
   list-style-type: square;
 }
 
-.dialog-main {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+.modal-content img,
+.modal-content iframe {
+  border-radius: 0.5rem;
+}
+
+.favorite-button,
+#modalClose {
+  background-color: var(--accent-color1);
+  color: var(--text-color-color);
+  border-radius: 0.5rem;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .favorite-button {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--accent-color1);
-  color: var(--text-color-color);
   padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  font-weight: bold;
-  cursor: pointer;
 }
 
 #modalClose {
   position: absolute;
   top: 15px;
   right: 15px;
-  background-color: var(--accent-color1);
-  color: var(--text-color-color);
   padding: 1rem;
   border-radius: 50%;
-  cursor: pointer;
 }
 
 /* Join */

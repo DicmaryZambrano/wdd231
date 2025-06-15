@@ -4,16 +4,15 @@ import { fetchRecipeById } from '../api/utils.mjs';
 export async function showRecipeDialog(recipe) {
   const dialog = document.getElementById("modal");
 
-  // exit if the dialog doesn't exist
   if (!dialog) {
     console.warn("Dialog element with id 'modal' not found.");
     return;
   }
 
-  const dialogDetails = document.querySelector("#modal div");
+  const dialogDetails = dialog.querySelector(".modal-content");
   const closeBtn = document.getElementById("modalClose");
 
-  // Clear previous listeners and content
+  // Clear modal content
   dialogDetails.innerHTML = "";
 
   if (closeBtn) {
@@ -25,39 +24,34 @@ export async function showRecipeDialog(recipe) {
 
   const data = await fetchRecipeById(recipe.idMeal);
 
-  const container = document.createElement("div");
-  container.className = "recipe-dialog-content";
-
-  const header = document.createElement("div");
-  header.className = "dialog-header";
-
-  const body = document.createElement("div");
-  body.className = "dialog-body";
-
-  const aside = document.createElement("aside");
-  aside.className = "dialog-sidebar";
-
-  const content = document.createElement("article");
-  content.className = "dialog-main";
-
   // Title
   const title = document.createElement("h2");
   title.textContent = data.strMeal;
-  header.appendChild(title);
 
-  // Image
+  // Sidebar (image + video)
+  const aside = document.createElement("aside");
+
   const img = document.createElement("img");
   img.src = data.strMealThumb;
   img.alt = data.strMeal;
 
-  // Category & Area
+  const video = document.createElement("iframe");
+  video.src = data.strYoutube.replace("watch?v=", "embed/");
+  video.width = "100%";
+  video.height = "200";
+  video.allowFullscreen = true;
+
+  aside.append(img, video);
+
+  // Main content
+  const article = document.createElement("article");
+
   const category = document.createElement("p");
   category.innerHTML = `<strong>Category:</strong> ${data.strCategory}`;
 
   const area = document.createElement("p");
   area.innerHTML = `<strong>Area:</strong> ${data.strArea}`;
 
-  // Ingredients
   const ingredientsTitle = document.createElement("h3");
   ingredientsTitle.textContent = "Ingredients";
 
@@ -72,21 +66,22 @@ export async function showRecipeDialog(recipe) {
     }
   }
 
-  // Instructions
   const instructionsTitle = document.createElement("h3");
   instructionsTitle.textContent = "Instructions";
 
   const instructions = document.createElement("p");
-  instructions.innerHTML = data.strInstructions;
+  instructions.textContent = data.strInstructions;
 
-  // Video
-  const video = document.createElement("iframe");
-  video.src = data.strYoutube.replace("watch?v=", "embed/");
-  video.width = "100%";
-  video.height = "200";
-  video.allowFullscreen = true;
+  article.append(
+    category,
+    area,
+    ingredientsTitle,
+    ingredientsList,
+    instructionsTitle,
+    instructions
+  );
 
-  // Favorite Button
+  // Favorite button
   const favButton = document.createElement("button");
   favButton.textContent = isFavorite(data.idMeal) ? "💔 Remove" : "❤️ Add";
   favButton.ariaLabel = "Toggle favorite";
@@ -96,16 +91,8 @@ export async function showRecipeDialog(recipe) {
     favButton.textContent = isFavorite(data.idMeal) ? "💔 Remove" : "❤️ Add";
   });
 
-  // Assemble content
-  aside.appendChild(img);
-  aside.appendChild(video);
-
-  content.append(category, area, ingredientsTitle, ingredientsList, instructionsTitle, instructions,);
-
-  body.append(aside, content);
-  container.append(header, body, favButton);
+  dialogDetails.append(title, aside, article, favButton);
 
   // Render
-  dialogDetails.appendChild(container);
   dialog.showModal();
 }
