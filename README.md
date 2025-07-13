@@ -3,6 +3,11 @@
 ## 📚 Project Overview
 This project was created from scratch as the final assignment for *Web Development 231*. It is a food blog website that allows users to explore and save recipes, learn about dishes from their favorite restaurants, and even apply to contribute to the blog.
 
+## Media
+
+[Foodie Finds Youtube Video](https://youtu.be/Bc9oc5rU684)
+[Foodie Finds Home Page](https://dicmaryzambrano.github.io/wdd231/final/index.html)
+
 ## 🎯 Features
 
 - 🔍 Explore new recipes
